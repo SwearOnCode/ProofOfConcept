@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Robustness Diagram - Editor</title>
+
+    <link rel="stylesheet" type="text/css" href="./stylesheets/library/joint.css"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/editor.css"/>
+</head>
+
+<body>
+
+<!-- Titolo della pagina -->
+<div id="title">
+    <h1>IronWorks</h1>
+</div>
+
+<!-- Graph contenente gli elementi spostabili nell'editor -->
+<div id="elements"></div>
+<!-- Proprietà modificabili per gli elementi del menu -->
+<div id="menu">
+    <!-- Attore: Campi per inserire il nome, scegliere l'eventuale colore, e aggiungere l'elemento al diagramma -->
+    <div class="divElement">
+        <div class="attrsElement">
+            <div>
+                <label for="actorName">Name:</label>
+                <input id="actorName" type="text" name="actorName" size="8"/>
+            </div>
+            <div>
+                <label for="actorColor">Color:</label>
+                <input id="actorColor" type="color" name="actorColor" onclick="actorColorSelected()"/>
+                <div class="noColor">
+                    <label class="lbNoColor" for="actorNoColor">No Color:</label>
+                    <input id="actorNoColor" type="checkbox" name="actorNoColor" checked="checked"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boundary: Campi per inserire il nome, scegliere l'eventuale colore, e aggiungere l'elemento al diagramma -->
+    <div class="divElement">
+        <div class="attrsElement">
+            <div>
+                <label for="boundaryName">Name:</label>
+                <input id="boundaryName" type="text" name="boundaryName" size="8"/>
+            </div>
+            <div>
+                <label for="boundaryColor">Color:</label>
+                <input id="boundaryColor" type="color" name="boundaryColor" onclick="boundaryColorSelected()"/>
+                <div class="noColor">
+                    <label class="lbNoColor" for="boundaryNoColor">No Color:</label>
+                    <input id="boundaryNoColor" type="checkbox" name="boundaryNoColor" checked="checked"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Control: Campi per inserire il nome, scegliere l'eventuale colore, e aggiungere l'elemento al diagramma -->
+    <div class="divElement">
+        <div class="attrsElement">
+            <div>
+                <label for="controlName">Name:</label>
+                <input id="controlName" type="text" name="controlName" size="8"/>
+            </div>
+            <div>
+                <label for="controlColor">Color:</label>
+                <input id="controlColor" type="color" name="controlColor" onclick="controlColorSelected()"/>
+                <div class="noColor">
+                    <label class="lbNoColor" for="controlNoColor">No Color:</label>
+                    <input id="controlNoColor" type="checkbox" name="controlNoColor" checked="checked"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entità: Campi per inserire il nome, scegliere l'eventuale colore, e aggiungere l'elemento al diagramma -->
+    <div class="divElement">
+        <div class="attrsElement">
+            <div>
+                <label for="entityName">Name:</label>
+                <input id="entityName" type="text" name="entityName" size="8"/>
+            </div>
+            <div>
+                <label for="entityColor">Color:</label>
+                <input id="entityColor" type="color" name="entityColor" onclick="entityColorSelected()"/>
+                <div class="noColor">
+                    <label class="lbNoColor" for="entityNoColor">No Color:</label>
+                    <input id="entityNoColor" type="checkbox" name="entityNoColor" checked="checked"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linea di associazione: Aggiungere l'elemento al diagramma -->
+</div>
+
+<!-- Contenitore del foglio per il diagramma corrente -->
+<div id="editor"></div>
+
+<!-- Pulsanti disponibili nell'editor -->
+<div id="buttons">
+    <!-- Linea di associazione: Aggiungere l'elemento al diagramma -->
+    <button class="btnAddLine" type="button" title="Add an Association Line into diagram to connect two elements"
+            onclick="addLine()">Add Line
+    </button>
+
+    <!-- Caricamento di un file JSON contenente un diagramma salvato -->
+    <form id="load" title="Load a JSON file to show the diagram" enctype="multipart/form-data" method="post">
+        <label for="inputJSON" class="custom-file-upload"><img src="images\load.svg" class="imgBotton"></label>
+        <input class="hiddenType" id="inputJSON" type="file" name="inputJSON" oninput="loadDiagram()"/>
+    </form>
+
+    <!-- Salvataggio in un file JSON del diagramma corrente -->
+    <div id="save">
+        <ul>
+            <li>
+                <button class="saveButton" type="button" title="Save JSON file of current diagram"
+                        onclick="saveDiagram()"><img src="images\save.svg" class="imgBotton"></button>
+            </li>
+            <li id="downloadJSON"></li>
+        </ul>
+    </div>
+
+    <!-- Esportazione in un archivio ZIP del codice generato a partire dal diagramma corrente -->
+    <form id="export" title="Export zip containing Java and SQL code of persistent entity" action="fileupload"
+          method="post" enctype="multipart/form-data">
+        <label for="exportCode" class="custom-file-upload"><img src="images\code.svg" class="imgBotton"></label>
+        <input class="hiddenType" id="exportCode" type="file" name="filetoupload" oninput="downloadCode.click()">
+        <input id="downloadCode" type="submit">
+    </form>
+</div>
+
+<!-- Importazione del file JavaScript personalizzato per la realizzazione del diagramma-->
+<script type="text/javascript" src="./javascripts/library/jquery.js"></script>
+<script type="text/javascript" src="./javascripts/library/lodash.js"></script>
+<script type="text/javascript" src="./javascripts/library/backbone.js"></script>
+<script type="text/javascript" src="./javascripts/library/joint.js"></script>
+<script type="text/javascript" src="./javascripts/editor.js"></script>
+
+</body>
+</html>

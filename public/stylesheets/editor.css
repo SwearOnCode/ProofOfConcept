@@ -1,0 +1,175 @@
+/* Style generale riguardante i diversi tag HTML */
+* {
+    font-family: "Verdana";
+}
+
+#title {
+    display: table;
+    text-align: center;
+    background-color: #51BBE6;
+    color: #FDF2F4;
+    border: 1px solid gray;
+    width: 1211px;
+    height: 100px;
+}
+
+h1 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+ul {
+    margin: 0.5em;
+    padding: 0;
+    list-style: none;
+}
+
+g {
+    stroke-width: 1.25px;
+}
+
+label {
+    padding-right: 0.15em;
+}
+
+input[type=checkbox] {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+/* Style del menu di interazione con l'editor */
+#menu {
+    float: left;
+    width: 180px;
+    height: 700px;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: #FFF;
+}
+
+/* Style del foglio contenente il diagramma */
+#elements {
+    float: left;
+    margin: 0;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#editor {
+    overflow: hidden;
+    margin: 0;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#buttons {
+    float: left;
+    clear: both;
+    width: 1211px;
+    background-color: #51BBE6;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding-top: 20px;
+}
+
+/* Style dei riquadri per le operazioni sul diagramma nel complesso */
+#load,
+#export {
+    background-color: #51BBE6;
+    margin: 10px;
+    float: right;
+}
+
+#save {
+    background-color: #51BBE6;
+    /*margin: 0 70px 10px 0;*/
+    float: right;
+}
+
+/* Style dei riquadri per l'inserimento di un elemento che prevede dati aggiuntivi */
+.divElement {
+    margin-bottom: 30px;
+    clear: both;
+    float: left;
+}
+
+/* Style del bottone per l'inserimento di un elemento linea di associazione */
+button:hover {
+    opacity: 0.7;
+}
+
+.btnAddLine {
+    background-color: #E7E7E7;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 20px;
+    cursor: pointer;
+}
+
+.saveButton {
+    border: none;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    outline: none;
+    background-color: Transparent;
+    text-decoration: none;
+}
+
+.saveButton:hover {
+    opacity: 1.0;
+}
+
+input[type="file"].hiddenType {
+    display: none;
+}
+
+.custom-file-upload {
+    border: none;
+    display: inline-block;
+    padding: 2px 12px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.imgBotton {
+    height: 2em;
+}
+
+#actorColor,
+#boundaryColor,
+#entityColor,
+#controlColor,
+#actorName,
+#boundaryName,
+#entityName,
+#controlName {
+    width: 100px;
+}
+
+/* Style dei riquadri dei campi per l'inserimento di dati aggiuntivi riguardanti gli elementi */
+.attrsElement {
+    margin-top: 0.6em;
+    float: left;
+}
+
+/* Style dei sotto-riquadri dei campi per l'inserimento di dati aggiuntivi riguardanti gli elementi */
+.attrsElement > div {
+    padding: 0 0.75em 0.75em;
+}
+
+/* Style del sotto-sotto-riquadro riguardante la scelta di non voler assegnare alcun colore all'elemento da inseririe */
+.noColor {
+    padding-top: 0.5em;
+}
+
+#downloadJSON,
+#downloadCode {
+    display: none;
+}
