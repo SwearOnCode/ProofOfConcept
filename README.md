@@ -3,7 +3,7 @@ Proof of Concept del progetto IronWorks.
 
 È necessario avere installato il package manager npm.
 
-Dentro la cartella del ProofOfoConcept eseguire
+Dentro la cartella del ProofOfConcept eseguire
 
 npm start
 
