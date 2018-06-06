@@ -4,7 +4,6 @@
 }
 
 #title {
-    margin: auto; /* TEMP */
     display: table;
     text-align: center;
     background-color: #51BBE6;
@@ -52,7 +51,6 @@ input[type=checkbox] {
 #elements {
     float: left;
     margin: 0;
-    margin-left: 61px; /* TEMP */
     border-left: 1px solid gray;
     border-bottom: 1px solid gray;
 }
@@ -65,7 +63,6 @@ input[type=checkbox] {
 }
 
 #buttons {
-    margin-left: 61px; /* TEMP */
     float: left;
     clear: both;
     width: 1211px;
